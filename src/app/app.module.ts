@@ -6,7 +6,7 @@ import {
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
-import { SuggestionsModule } from './cart-suggestion/cart-suggestion-list-component.module';
+import { SuggestionsModule } from './cart-suggestion/cart-suggestion-list.module';
 
 @NgModule({
   declarations: [AppComponent],
