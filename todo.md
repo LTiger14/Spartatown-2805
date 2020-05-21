@@ -11,8 +11,9 @@
 2. Quickly demo the app
 3. start from 1.5 spa repo
 4. run ng9 upgrade
-   4.1 switch to slides
-   4.2 schematics stuff (supported migration scripts)
+   4.1 `ng update @angular/core @angular/cli --force`
+   4.2 switch to slides
+   4.3 schematics stuff (supported migration scripts)
 5. Run `ng add @angular/localize`
 6. Run `ng update @spartacus/schematics --next`
    6.1 talk about package.json while it's running
