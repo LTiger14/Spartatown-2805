@@ -6,7 +6,7 @@ import {
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
-import { CartSuggestionListComponentModule } from './cart-suggestion/cart-suggestion-list-component/cart-suggestion-list-component.module';
+import { SuggestionsModule } from './cart-suggestion/cart-suggestion-list-component.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +32,7 @@ import { CartSuggestionListComponentModule } from './cart-suggestion/cart-sugges
     }),
     BrowserTransferStateModule,
 
-    CartSuggestionListComponentModule,
+    SuggestionsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

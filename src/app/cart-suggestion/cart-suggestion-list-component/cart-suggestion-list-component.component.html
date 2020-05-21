@@ -1,11 +1,11 @@
 <ng-container *ngIf="suggestions$ | async as suggestions">
-  <cx-carousel
-    [items]="suggestions.items$"
+  <app-custom-carousel-component
+    [items]="suggestions.items$ | async"
     [title]="suggestions.title"
     [template]="carouselItem"
     itemWidth="285px"
   >
-  </cx-carousel>
+  </app-custom-carousel-component>
 </ng-container>
 
 <ng-template #carouselItem let-item="item">
