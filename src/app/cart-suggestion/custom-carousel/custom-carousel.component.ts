@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-custom-carousel-component',
-  templateUrl: './custom-component.component.html',
+  templateUrl: './custom-carousel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CustomCarouselComponent extends ProductCarouselComponent {

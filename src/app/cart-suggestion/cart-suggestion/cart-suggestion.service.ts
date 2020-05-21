@@ -23,7 +23,7 @@ export class CartSuggestionService {
               .map((suggestion) => suggestion.target)
               .map((product) => of(product));
             return {
-              items$,
+              items$: of(items$),
               title: `Suggestions for ${cartProduct.name}`,
             };
           })

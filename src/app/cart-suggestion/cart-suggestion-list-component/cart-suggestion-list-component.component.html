@@ -1,24 +1,7 @@
 <ng-container *ngIf="suggestions$ | async as suggestions">
   <app-custom-carousel-component
-    [items]="suggestions.items$ | async"
+    [items$]="suggestions.items$"
     [title]="suggestions.title"
-    [template]="carouselItem"
-    itemWidth="285px"
   >
   </app-custom-carousel-component>
 </ng-container>
-
-<ng-template #carouselItem let-item="item">
-  <a tabindex="0" [routerLink]="{ cxRoute: 'product', params: item } | cxUrl">
-    <cx-media
-      *ngIf="item.images?.PRIMARY"
-      [container]="item.images.PRIMARY"
-      format="product"
-    >
-    </cx-media>
-    <h4>{{ item.name }}</h4>
-    <div class="price">
-      {{ item.price?.formattedValue }}
-    </div>
-  </a>
-</ng-template>

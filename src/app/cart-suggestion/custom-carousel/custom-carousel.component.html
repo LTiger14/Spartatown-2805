@@ -2,16 +2,19 @@
   [items]="items$ | async"
   [title]="title"
   [template]="carouselItem"
-  itemWidth="285px"
+  itemWidth="200px"
 >
 </cx-carousel>
 
 <ng-template #carouselItem let-item="item">
   <a tabindex="0" [routerLink]="{ cxRoute: 'product', params: item } | cxUrl">
-    <cx-media [container]="item.images?.PRIMARY"></cx-media>
-    <h4>
-      {{ item.name }}
-    </h4>
+    <cx-media
+      *ngIf="item.images?.PRIMARY"
+      [container]="item.images.PRIMARY"
+      format="product"
+    >
+    </cx-media>
+    <h4>{{ item.name }}</h4>
     <div class="price">
       {{ item.price?.formattedValue }}
     </div>
