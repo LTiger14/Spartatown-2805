@@ -1,19 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { CmsConfig, CmsStructureConfig, ConfigModule } from '@spartacus/core';
+import { CmsConfig, ConfigModule } from '@spartacus/core';
+import { CartSuggestionService } from '../cart-suggestion/cart-suggestion.service';
 import { CartSuggestionListComponent } from './cart-suggestion-list-component.component';
-// import { LayoutConfig } from '@spartacus/storefront';
-import { staticCmsConfig } from './static-cms-config';
 
 @NgModule({
   declarations: [CartSuggestionListComponent],
   imports: [
     CommonModule,
-    ConfigModule.withConfig(staticCmsConfig as CmsStructureConfig),
-    // ConfigModule.withConfig(LayoutConfig),
     ConfigModule.withConfig({
       cmsComponents: {
-        CartSuggestionListComponent: {
+        SaveForLaterComponent: {
           component: CartSuggestionListComponent,
         },
       },
@@ -21,5 +18,6 @@ import { staticCmsConfig } from './static-cms-config';
   ],
   entryComponents: [CartSuggestionListComponent],
   exports: [CartSuggestionListComponent],
+  providers: [CartSuggestionService],
 })
 export class CartSuggestionListComponentModule {}
