@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CartService, ProductReferenceService } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
-import { Suggestions } from './suggestions.model';
+import { Suggestions } from '../model/suggestions.model';
 
 @Injectable()
 export class CartSuggestionService {
