@@ -1,6 +1,6 @@
 # Demo
 
-1. Component and html deprecation - CartItemComponent no longer uses isSaveForLaterEnabled(). Use the method in both ts and html.
+1. example where we use a removed method
 
 ## Demo flow
 
