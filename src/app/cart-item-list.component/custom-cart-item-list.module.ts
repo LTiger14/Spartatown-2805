@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { I18nModule, UrlModule } from '@spartacus/core';
+import { FeaturesConfigModule, I18nModule, UrlModule } from '@spartacus/core';
 import {
   CarouselModule,
   CartSharedModule,
-  ItemCounterModule,
   MediaModule,
   ProductCarouselModule,
   PromotionsModule,
@@ -16,7 +16,7 @@ import { CustomCartItemListComponent } from './custom-cart-item-list.component';
   imports: [
     I18nModule,
     CartSharedModule,
-    ItemCounterModule,
+    ReactiveFormsModule,
     PromotionsModule,
     ProductCarouselModule,
     CarouselModule,
@@ -24,6 +24,7 @@ import { CustomCartItemListComponent } from './custom-cart-item-list.component';
     MediaModule,
     UrlModule,
     CommonModule,
+    FeaturesConfigModule,
   ],
   declarations: [CustomCartItemListComponent],
   exports: [CustomCartItemListComponent],
