@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { CartService, ProductReferenceService } from '@spartacus/core';
+import { ofType } from '@ngrx/effects';
+import { ActionsSubject } from '@ngrx/store';
+import {
+  CartActions,
+  CartService,
+  ProductReferenceService,
+} from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { Suggestions } from '../model/suggestions.model';
@@ -8,8 +14,16 @@ import { Suggestions } from '../model/suggestions.model';
 export class CartSuggestionService {
   constructor(
     private cartService: CartService,
-    private productReferenceService: ProductReferenceService
+    private productReferenceService: ProductReferenceService,
+    private actionSubject: ActionsSubject
   ) {}
+
+  cartErrors(): Observable<any> {
+    return this.actionSubject.pipe(
+      ofType<CartActions.LoadMultiCartFail>(CartActions.LOAD_MULTI_CART_FAIL),
+      map((action) => action.payload.error)
+    );
+  }
 
   getSuggestions(): Observable<Suggestions> {
     return this.cartService.getActive().pipe(

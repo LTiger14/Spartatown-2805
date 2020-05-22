@@ -10,6 +10,7 @@ import { CartSuggestionService } from '../services/cart-suggestion.service';
 })
 export class CartSuggestionListComponent {
   suggestions$: Observable<Suggestions> = this.service.getSuggestions();
+  errors$: Observable<any> = this.service.cartErrors();
 
   constructor(private service: CartSuggestionService) {}
 }
