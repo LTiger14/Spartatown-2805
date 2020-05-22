@@ -1,0 +1,7 @@
+<ng-container *ngIf="suggestions$ | async as suggestions">
+  <app-custom-carousel-component
+    [items$]="suggestions.items$"
+    [title]="suggestions.title"
+  >
+  </app-custom-carousel-component>
+</ng-container>

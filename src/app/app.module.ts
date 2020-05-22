@@ -3,9 +3,11 @@ import {
   BrowserModule,
   BrowserTransferStateModule,
 } from '@angular/platform-browser';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
+import { SuggestionsModule } from './cart-suggestion/cart-suggestion-list.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +32,10 @@ import { AppComponent } from './app.component';
       },
     }),
     BrowserTransferStateModule,
+
+    SuggestionsModule,
+
+    StoreDevtoolsModule.instrument(),
   ],
   providers: [],
   bootstrap: [AppComponent],
