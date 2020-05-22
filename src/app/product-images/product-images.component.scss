@@ -1,0 +1,11 @@
+.similar-categories {
+  display: flex;
+
+  div:not(first-of-type) {
+    margin: 0 0.5em;
+  }
+
+  div:first-child {
+    margin-left: -0.1em;
+  }
+}
