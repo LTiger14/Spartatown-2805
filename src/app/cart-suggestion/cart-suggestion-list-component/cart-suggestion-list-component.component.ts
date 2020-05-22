@@ -10,6 +10,5 @@ import { CartSuggestionService } from '../services/cart-suggestion.service';
 })
 export class CartSuggestionListComponent {
   suggestions$: Observable<Suggestions> = this.service.getSuggestions();
-
   constructor(private service: CartSuggestionService) {}
 }
