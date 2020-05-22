@@ -6,6 +6,7 @@ import {
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
+import { SpartaProductImagesModule } from './product-images/product-images.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { AppComponent } from './app.component';
       },
     }),
     BrowserTransferStateModule,
+    SpartaProductImagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

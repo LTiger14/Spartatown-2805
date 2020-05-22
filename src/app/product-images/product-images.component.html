@@ -1,0 +1,39 @@
+<ng-container *ngIf="mainImage$ | async as main">
+  <cx-media [container]="main" format="zoom"> </cx-media>
+</ng-container>
+
+<ng-container *ngIf="isThumbsEmpty; else thumbnails">
+  <h3>FIND MORE PRODUCTS LIKE THIS</h3>
+  <ng-container *ngIf="categories$ | async as categories">
+    <div class="similar-categories">
+      <div *ngFor="let category of categories">
+        <a class="btn btn-outline-dark" [href]="category.url">{{
+          category.name
+        }}</a>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
+<ng-template #thumbnails>
+  <ng-container *ngIf="thumbs$ | async as thumbs">
+    <cx-carousel
+      *ngIf="thumbs.length"
+      class="thumbs"
+      [items]="thumbs"
+      itemWidth="120px"
+      [hideIndicators]="false"
+      [template]="thumb"
+    ></cx-carousel>
+  </ng-container>
+</ng-template>
+
+<ng-template #thumb let-item="item">
+  <cx-media
+    [container]="item.container"
+    tabindex="0"
+    format="thumbnail"
+    (focus)="openImage(item.container)"
+    [class.is-active]="isActive(item.container) | async"
+  >
+  </cx-media>
+</ng-template>
