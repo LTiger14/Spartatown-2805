@@ -1,6 +1,5 @@
 # Demo
 
-1. ctor - `ProductCarouselComponent` no longer requires `FeatureConfigService`.
 1. removed-public-api-deprecation - loading selector - wait 2s on the cart page for related products to load. Use deprecated versions of ProductActions.LoadProductSuccess()
 1. Component and html deprecation - CartItemComponent no longer uses isSaveForLaterEnabled(). Use the method in both ts and html.
 1. `anonymousFeature` - config deprecation

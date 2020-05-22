@@ -3,10 +3,10 @@ import {
   BrowserModule,
   BrowserTransferStateModule,
 } from '@angular/platform-browser';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
-import { CustomCartItemListModule } from './cart-item-list.component/custom-cart-item-list.module';
 import { SuggestionsModule } from './cart-suggestion/cart-suggestion-list.module';
 
 @NgModule({
@@ -34,7 +34,8 @@ import { SuggestionsModule } from './cart-suggestion/cart-suggestion-list.module
     BrowserTransferStateModule,
 
     SuggestionsModule,
-    CustomCartItemListModule,
+
+    StoreDevtoolsModule.instrument(),
   ],
   providers: [],
   bootstrap: [AppComponent],
