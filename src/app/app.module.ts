@@ -5,6 +5,7 @@ import {
 } from '@angular/platform-browser';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { translationChunksConfig, translations } from '@spartacus/assets';
+import { UrlMatcherFactoryService } from '@spartacus/core';
 import { B2cStorefrontModule } from '@spartacus/storefront';
 import { AppComponent } from './app.component';
 import { SuggestionsModule } from './cart-suggestion/cart-suggestion-list.module';
@@ -42,4 +43,8 @@ import { SpartaProductImagesModule } from './product-images/product-images.modul
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private urlMatcher: UrlMatcherFactoryService) {
+    this.urlMatcher.getFalsyUrlMatcher();
+  }
+}
