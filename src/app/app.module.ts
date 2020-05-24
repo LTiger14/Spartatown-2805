@@ -6,6 +6,7 @@ import {
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { translationChunksConfig, translations } from '@spartacus/assets';
 import { B2cStorefrontModule } from '@spartacus/storefront';
+import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import { SuggestionsModule } from './cart-suggestion/cart-suggestion-list.module';
 import { SpartaProductImagesModule } from './product-images/product-images.module';
@@ -32,14 +33,13 @@ import { SpartaProductImagesModule } from './product-images/product-images.modul
         anonymousConsents: true,
       },
     }),
+
     BrowserTransferStateModule,
     SpartaProductImagesModule,
-
     SuggestionsModule,
 
-    StoreDevtoolsModule.instrument(),
+    ...(environment.production ? [] : [StoreDevtoolsModule.instrument()]),
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
