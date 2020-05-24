@@ -1,7 +1,5 @@
 # Demo
 
-1. example where we use a removed method
-
 ## Demo flow
 
 1. Introduction - why is it useful?
