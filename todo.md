@@ -1,5 +1,7 @@
 # Demo
 
+1. Push a branch with the already upgraded app
+
 ## Demo flow
 
 1. Introduction - why is it useful?
