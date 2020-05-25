@@ -12,12 +12,12 @@
 4. L - run ng9 upgrade
    L - 4.1 `ng update @angular/core @angular/cli --force`
    L - 4.2 switch to slides
-   L?N? - 4.3 slide - schematics stuff (supported migration scripts)
+   L - 4.3 slide - schematics stuff (supported migration scripts)
 5. N - Run `ng update @spartacus/schematics --next`
    N - 6.1 Run `ng add @angular/localize`
    N - 6.2 talk about package.json while it's running
 6. N - Show the diff. Talk about changes
-7. L?N? - Fix the breaking changes live
+7. N - Fix the breaking changes live
 8. X - Have a working branch (after the upgrade), just in case
-9. L?N? - Switch back to the app UI and show that it's working again
-10. L?N? - Future plans
+9. N - Switch back to the app UI and show that it's working again
+10. N - Future plans
