@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UrlMatcherFactoryService } from '@spartacus/core';
+import { LoggerService } from './logger/logger.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,6 @@ import { UrlMatcherFactoryService } from '@spartacus/core';
 })
 export class AppComponent {
   constructor(private urlMatcher: UrlMatcherFactoryService) {
-    // dummy example
-    this.urlMatcher.getFalsyUrlMatcher();
+    LoggerService.log(this.urlMatcher.getGlobUrlMatcher(['*']));
   }
 }
