@@ -6,7 +6,7 @@ import {
   StateWithCart,
 } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
-import { filter, map, switchMap } from 'rxjs/operators';
+import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { Suggestions } from '../model/suggestions.model';
 
 @Injectable()
@@ -21,8 +21,9 @@ export class CartSuggestionService {
       select(CartSelectors.getCartEntries),
       filter((entries) => entries.length > 0),
       map((entries) => entries[0].product),
+      tap((_) => this.productReferenceService.cleanReferences()),
       switchMap((cartProduct) =>
-        this.productReferenceService.get(cartProduct.code).pipe(
+        this.productReferenceService.get(cartProduct.code, 'ACCESSORIES').pipe(
           filter((suggestions) => Boolean(suggestions)),
           map((suggestions) => {
             const items$ = suggestions
@@ -30,7 +31,7 @@ export class CartSuggestionService {
               .map((product) => of(product));
             return {
               items$: of(items$),
-              title: `Suggestions for ${cartProduct.name}`,
+              title: `Suggestions based on ${cartProduct.name}`,
             };
           })
         )
