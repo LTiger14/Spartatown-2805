@@ -7,7 +7,7 @@ import {
   MediaModule,
   ProductCarouselModule,
 } from '@spartacus/storefront';
-import { CustomCarouselComponent } from './custom-carousel.component';
+import { SpartaCarouselComponent } from './carousel.component';
 
 @NgModule({
   imports: [
@@ -18,7 +18,7 @@ import { CustomCarouselComponent } from './custom-carousel.component';
     UrlModule,
     CommonModule,
   ],
-  declarations: [CustomCarouselComponent],
-  exports: [CustomCarouselComponent],
+  declarations: [SpartaCarouselComponent],
+  exports: [SpartaCarouselComponent],
 })
 export class CustomCarouselModule {}

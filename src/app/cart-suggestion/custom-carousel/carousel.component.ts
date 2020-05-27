@@ -12,11 +12,11 @@ import {
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-custom-carousel-component',
-  templateUrl: './custom-carousel.component.html',
+  selector: 'app-carousel-component',
+  templateUrl: './carousel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CustomCarouselComponent extends ProductCarouselComponent {
+export class SpartaCarouselComponent extends ProductCarouselComponent {
   @Input()
   title: string;
   @Input()
