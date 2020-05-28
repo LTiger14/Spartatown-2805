@@ -13,4 +13,4 @@ Steps to take in order to upgrade:
 
 To check the upgraded application, check out the `upgrade-2-0` branch.
 
-When switching between the `master` and `upgrade-2-0` branches, don't forget to delete you `node_modules` and to install the package: `rm -rf node_modules && yarn`.
+When switching between the `master` and `upgrade-2-0` branches, don't forget to delete you `node_modules` and to install the packages: `rm -rf node_modules && yarn`.
