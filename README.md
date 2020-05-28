@@ -1,27 +1,16 @@
 # Spartatown
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+This repo was created for Sparta town demo streamed live on 28th May, 2020.
 
-## Development server
+It demonstrates how to use Spartacus schematics in order to migrate 1.5.x Spartacus application to 2.0.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Steps to take in order to upgrade:
 
-## Code scaffolding
+1. `ng update @angular/core @angular/cli --force` - upgrade to Angular 9
+2. `ng update @spartacus/schematics --next` - upgrade to Spartacus 2.0
+3. `ng add @angular/localize` - don't forget to add the `@angular/localize`
+4. Resolve the _TODO_ comments.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To check the upgraded application, check out the `upgrade-2-0` branch.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+When switching between the `master` and `upgrade-2-0` branches, don't forget to delete you `node_modules` and to install the package: `rm -rf node_modules && yarn`.
