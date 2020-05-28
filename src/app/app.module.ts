@@ -30,8 +30,6 @@ import { SpartaProductImagesModule } from './product-images/product-images.modul
       },
       features: {
         level: '1.5',
-// TODO:Spartacus - 'anonymousConsents' has been removed, as this feature is now enabled by default.
-        anonymousConsents: true,
       },
     }),
 

@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import {
   CmsProductCarouselComponent,
-  
   Product,
   ProductService,
 } from '@spartacus/core';
@@ -25,8 +24,7 @@ export class SpartaCarouselComponent extends ProductCarouselComponent {
   constructor(
     componentData: CmsComponentData<CmsProductCarouselComponent>,
     productService: ProductService
-    
   ) {
-    super(componentData, productService );
+    super(componentData, productService);
   }
 }

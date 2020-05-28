@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
-import { select, Store } from '@ngrx/store';
-// TODO:Spartacus - 'CartSelectors' are no longer part of the public API. Instead use 'ActiveCartService', 'MultiCartState' and 'MultiCartSelectors'.
-// TODO:Spartacus - 'StateWithCart' along with rest of the 'cart' state was removed. Instead use new 'cart' state.
-import {
-  CartSelectors,
-  ProductReferenceService,
-  StateWithCart,
-} from '@spartacus/core';
+import { ActiveCartService, ProductReferenceService } from '@spartacus/core';
 import { Observable, of } from 'rxjs';
 import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { Suggestions } from '../model/suggestions.model';
@@ -15,12 +8,11 @@ import { Suggestions } from '../model/suggestions.model';
 export class CartSuggestionService {
   constructor(
     private productReferenceService: ProductReferenceService,
-    private store: Store<StateWithCart>
+    private activeCartService: ActiveCartService
   ) {}
 
   getSuggestions(): Observable<Suggestions> {
-    return this.store.pipe(
-      select(CartSelectors.getCartEntries),
+    return this.activeCartService.getEntries().pipe(
       filter((entries) => entries.length > 0),
       map((entries) => entries[0].product),
       tap((_) => this.productReferenceService.cleanReferences()),
