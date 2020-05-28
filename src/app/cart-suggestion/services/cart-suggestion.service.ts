@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
+// TODO:Spartacus - 'CartSelectors' are no longer part of the public API. Instead use 'ActiveCartService', 'MultiCartState' and 'MultiCartSelectors'.
+// TODO:Spartacus - 'StateWithCart' along with rest of the 'cart' state was removed. Instead use new 'cart' state.
 import {
   CartSelectors,
   ProductReferenceService,
