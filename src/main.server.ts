@@ -12,3 +12,4 @@ export { provideModuleMap } from "@nguniversal/module-map-ngfactory-loader";
 import { ngExpressEngine as engine } from '@nguniversal/express-engine';
 import { NgExpressEngineDecorator } from '@spartacus/core';
 export const ngExpressEngine = NgExpressEngineDecorator.get(engine);
+export { renderModule, renderModuleFactory } from '@angular/platform-server';
