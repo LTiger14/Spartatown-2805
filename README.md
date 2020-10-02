@@ -1,5 +1,8 @@
 # Spartatown
 
+To learn more about Spartacus please visit our
+[official Github](https://github.com/SAP/spartacus#what-is-spartacus)
+
 This repo was created for Sparta town demo streamed live on 28th May, 2020.
 
 It demonstrates how to use Spartacus schematics in order to migrate 1.5.x Spartacus application to 2.0.
